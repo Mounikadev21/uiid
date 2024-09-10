@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="h2"></h2>
+    <form action="">
+      <input
+        type="text"
+        placeholder="First Name"
+        id="fn"
+        required
+      /><br /><br />
+      <input
+        type="text"
+        placeholder="Second Name"
+        id="sn"
+        required
+      /><br /><br />
+      <input
+        type="tel"
+        pattern="[0-9]{10}"
+        placeholder="Mobile Number"
+        id="ag"
+        required
+      /><br /><br />
+      <input type="text" placeholder="Batch" id="bg" required /><br /><br />
+
+      <input type="submit" />
+    </form>
+    <div id="dd"></div>
+
+    <script>
+      document.body.style.display = "flex";
+      document.body.style.justifyContent = "center";
+      document.body.style.alignItems = "center";
+      document.body.style.height = "97vh";
+      document.body.style.flexDirection = "column";
+
+      let oo = document.getElementById("h2");
+      oo.innerHTML = "I'd card";
+
+      let inp = document.getElementsByTagName("input");
+      inp[0].style.height = "25px";
+      inp[0].style.textAlign = "center";
+
+      inp[1].style.height = "25px";
+      inp[1].style.textAlign = "center";
+
+      inp[2].style.height = "25px";
+      inp[2].style.textAlign = "center";
+
+      inp[3].style.height = "25px";
+      inp[3].style.textAlign = "center";
+
+      inp[4].style.height = "25px";
+      inp[4].style.width = "70px";
+
+      let fm = document.getElementsByTagName("form");
+      fm[0].style.width = "220px";
+      fm[0].style.padding = "40px 20px";
+      fm[0].style.borderRadius = "30px";
+      fm[0].style.border = "2px solid";
+
+      fm[0].addEventListener("submit", (a) => {
+        a.preventDefault();
+
+        let nn = document.createElement("h3");
+        document.body.appendChild(nn);
+
+        setTimeout(() => {
+          nn.innerHTML = "";
+          oo.innerHTML = "";
+
+          fm[0].style.display = "none";
+          let div = document.getElementById("dd");
+          div.style.height = "380px";
+          div.style.width = "250px";
+          div.style.border = "1px solid black";
+          div.style.borderRadius = "20px";
+          div.style.display = "flex";
+          div.style.flexDirection = "column";
+          div.style.alignItems = "center";
+          div.style.padding = "10px";
+
+          let h1 = document.createElement("h2");
+          div.appendChild(h1);
+          h1.innerHTML = "10000 <span>Coders</span><hr>";
+          h1.style.textShadow = "1px 1px 1.5px";
+
+          let img = document.createElement("img");
+          div.appendChild(img);
+          img.setAttribute("src", "./mb.jpg");
+          img.style.marginTop = "-10px";
+          img.style.width = "130px";
+          img.style.height = "130px";
+          let div1 = document.createElement("div");
+          div.appendChild(div1);
+          div1.style.fontSize = "16px";
+
+          let p1 = document.getElementById("fn");
+          let p2 = document.getElementById("sn");
+          let p = document.createElement("p");
+          div1.appendChild(p);
+          p.innerHTML = "<b>Name : </b>" + p1.value + " " + p2.value;
+
+          let p3 = document.getElementById("ag");
+          let ppp = document.createElement("p");
+          div1.appendChild(ppp);
+          ppp.innerHTML = "<b>Mobile : </b>" + p3.value;
+
+          let p4 = document.getElementById("bg");
+          let pppp = document.createElement("P");
+          div1.appendChild(pppp);
+          pppp.innerHTML = "<b>Batch: </b>" + p4.value;
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>
